@@ -52,7 +52,7 @@ class ProjectController extends Controller
         $project = Project::create($form_data);
 
         if ($request->has('technologies')) {
-            $project->technologies()->attach($form_data['tecnologies']); //->attach($request->technologies);
+            $project->technologies()->attach($form_data['technologies']); //->attach($request->technologies);
         }
         
         return redirect()->route('admin.projects.index')->with('message', "il nuovo progetto $project->title è stato aggiunto!");
